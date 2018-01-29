@@ -14,16 +14,17 @@
 <body>
     <div id="vue-app">
         <h1>Events</h1>
-        <button v-on:click="add(1)">Single Click +</button>
+        <button v-on:click.once="add(1)">Single Click +</button>
         <button @click="subtract(1)">Single CLick -</button>
         <button v-on:dblclick="add(10)">Double Click +</button>
         <button @dblclick="subtract(10)">Double Click -</button>
 
         <p>Result is: {{number}}</p>
 
-        <div id="canvas" v-on:mouseover="updateXY">
+        <div id="canvas" v-on:mousemove="updateXY">
             {{x}},{{y}}
         </div>
+        <a @click.prevent="linkClicked" href="https://www.google.com">::GOOGLE::</a>
 
     </div>
     <script src="app.js"></script>
