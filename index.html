@@ -6,18 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Vue Js Tutorials</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
     <div id="vue-app">
-        <h1>Data Binding</h1>
-        <p>Name: {{firstName}}</p>
-        <a v-bind:href="website">GOOGLE Using v-bind</a>
-        <a :href="website">GOOGLE without v-bind</a>
-        <p v-html="websiteTag"></p>
+        <h1>Events</h1>
+        <button v-on:click="add(1)">Single Click +</button>
+        <button @click="subtract(1)">Single CLick -</button>
+        <button v-on:dblclick="add(10)">Double Click +</button>
+        <button @dblclick="subtract(10)">Double Click -</button>
+
+        <p>Result is: {{number}}</p>
+
+        <div id="canvas" v-on:mouseover="updateXY">
+            {{x}},{{y}}
+        </div>
+
     </div>
     <script src="app.js"></script>
 </body>
