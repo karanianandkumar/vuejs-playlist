@@ -13,14 +13,14 @@
 
 <body>
     <div id="vue-app">
-        <h1>Key board Events</h1>
+        <h1>Computed Properties</h1>
 
-        <label>Name:</label>
-        <input type="text" placeholder="Enter your name" v-model="name">
-        <span>{{name}}</span>
-        <label>Age:</label>
-        <input type="number" placeholder="Enter your Age" v-model="age">
-        <span>{{age}}</span>
+        <button @click="a++">Add A</button>
+        <button @click="b++">Add B</button>
+        <!-- <p>Age+ A = {{addToA()}}</p> //For Every change of one variable it gonna run all the methods ,, so better using computed elements
+        <p>Age+ B = {{addToB()}}</p> -->
+        <p>Age+ A = {{addToA}}</p>
+        <p>Age+ B = {{addToB}}</p>
 
     </div>
     <script src="app.js"></script>
