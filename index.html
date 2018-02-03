@@ -13,18 +13,12 @@
 
 <body>
     <div id="vue-app">
-        <h1>Events</h1>
-        <button v-on:click.once="add(1)">Single Click +</button>
-        <button @click="subtract(1)">Single CLick -</button>
-        <button v-on:dblclick="add(10)">Double Click +</button>
-        <button @dblclick="subtract(10)">Double Click -</button>
+        <h1>Key board Events</h1>
 
-        <p>Result is: {{number}}</p>
-
-        <div id="canvas" v-on:mousemove="updateXY">
-            {{x}},{{y}}
-        </div>
-        <a @click.prevent="linkClicked" href="https://www.google.com">::GOOGLE::</a>
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" @keyup.enter="addName()">
+        <label>Age:</label>
+        <input type="number" placeholder="Enter your Age" @keyup.alt.enter="addAge()">
 
     </div>
     <script src="app.js"></script>
