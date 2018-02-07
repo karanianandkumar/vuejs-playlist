@@ -13,14 +13,32 @@
 
 <body>
     <div id="vue-app">
-        <h1>Conditionals in Vue Js</h1>
-        <button @click="success=!success">Toggle Success</button>
-        <button @click="error=!error">Toggle Error</button>
-        <p v-if="error">This is Error</p>
-        <p v-else-if="success">This is Success</p>
+        <h1>Loops in Vue Js</h1>
+        <ul>
+            <li v-for="character in characters">
+                {{character}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(person,index) in record">
+                {{index}} . {{person.name}} - {{person.age}}
 
-        <p v-show="error">This is Error</p>
-        <p v-show="success">This is Success</p>
+            </li>
+        </ul>
+
+        <div>
+            <template v-for="(person,index) in record">
+               <div> {{index}} . {{person.name}} - {{person.age}}</div>
+            </template>
+        </div>
+        <hr/>
+        <div>
+            <template v-for="person in record">
+                   <div v-for="(val,key) in person">
+                    {{key}} - {{val}}
+                   </div>
+                </template>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
