@@ -13,14 +13,20 @@
 
 <body>
     <div id="vue-app">
-        <h1>Computed Properties</h1>
+        <h1>Dynamic CSS</h1>
+        <!-- Example 1 -->
+        <div @click="available=!available" :class="{available:available}">
+            <span>Anand Kumar</span>
+        </div>
 
-        <button @click="a++">Add A</button>
-        <button @click="b++">Add B</button>
-        <!-- <p>Age+ A = {{addToA()}}</p> //For Every change of one variable it gonna run all the methods ,, so better using computed elements
-        <p>Age+ B = {{addToB()}}</p> -->
-        <p>Age+ A = {{addToA}}</p>
-        <p>Age+ B = {{addToB}}</p>
+        <!-- Example 2 -->
+
+        <button @click="available=!available">Toggle Available</button>
+        <button @click="nearby=!nearby">Toggle Near By</button>
+        <div :class="computedCss">
+            <span>Anand Kumar</span>
+        </div>
+
 
     </div>
     <script src="app.js"></script>
