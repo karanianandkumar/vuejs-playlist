@@ -1,6 +1,15 @@
-#canvas {
-    width: 400px;
-    padding: 20px 0;
-    text-align: center;
-    border: 1px solid gray;
+span {
+    width: 100px;
+    height: 100px;
+    background: green;
+    color: white;
+}
+
+.available span {
+    background: red;
+}
+
+.nearby span:after {
+    content: ' Near by';
+    background: yellow;
 }
