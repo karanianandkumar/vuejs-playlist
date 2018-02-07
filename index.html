@@ -13,21 +13,14 @@
 
 <body>
     <div id="vue-app">
-        <h1>Dynamic CSS</h1>
-        <!-- Example 1 -->
-        <div @click="available=!available" :class="{available:available}">
-            <span>Anand Kumar</span>
-        </div>
+        <h1>Conditionals in Vue Js</h1>
+        <button @click="success=!success">Toggle Success</button>
+        <button @click="error=!error">Toggle Error</button>
+        <p v-if="error">This is Error</p>
+        <p v-else-if="success">This is Success</p>
 
-        <!-- Example 2 -->
-
-        <button @click="available=!available">Toggle Available</button>
-        <button @click="nearby=!nearby">Toggle Near By</button>
-        <div :class="computedCss">
-            <span>Anand Kumar</span>
-        </div>
-
-
+        <p v-show="error">This is Error</p>
+        <p v-show="success">This is Success</p>
     </div>
     <script src="app.js"></script>
 </body>
