@@ -13,31 +13,17 @@
 
 <body>
     <div id="vue-app">
-        <h1>Loops in Vue Js</h1>
-        <ul>
-            <li v-for="character in characters">
-                {{character}}
-            </li>
-        </ul>
-        <ul>
-            <li v-for="(person,index) in record">
-                {{index}} . {{person.name}} - {{person.age}}
+        <div class="container">
+            <div class="bag-container" :class="{bagburst:empty}">
 
-            </li>
-        </ul>
-
-        <div>
-            <template v-for="(person,index) in record">
-               <div> {{index}} . {{person.name}} - {{person.age}}</div>
-            </template>
-        </div>
-        <hr/>
-        <div>
-            <template v-for="person in record">
-                   <div v-for="(val,key) in person">
-                    {{key}} - {{val}}
-                   </div>
-                </template>
+            </div>
+            <div class="bag-health">
+                <div :style="{width:health+'%'}"></div>
+            </div>
+            <div class="controls">
+                <button @click="punch" v-show="!empty">Punch</button>
+                <button @click="restart">Restart</button>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>

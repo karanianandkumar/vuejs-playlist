@@ -1,15 +1,22 @@
 new Vue({
     el: '#vue-app',
     data: {
-        characters: ['Good', 'Bad', 'Ugly', 'Great'],
-        record: [
-            { name: 'Anand', age: '23' },
-            { name: 'Kumar', age: '24' },
-            { name: 'Dad', age: '53' }
-        ]
+        health: 100,
+        empty: false
     },
     methods: {
+        punch: function() {
 
+            this.health -= 20;
+            if (this.health <= 0) {
+                this.empty = true;
+            }
+            console.log(this.health);
+        },
+        restart: function() {
+            this.health = 100;
+            this.empty = false;
+        }
     },
     computed: {
 
