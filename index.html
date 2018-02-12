@@ -12,19 +12,14 @@
 </head>
 
 <body>
-    <div id="vue-app">
-        <div class="container">
-            <div class="bag-container" :class="{bagburst:empty}">
-
-            </div>
-            <div class="bag-health">
-                <div :style="{width:health+'%'}"></div>
-            </div>
-            <div class="controls">
-                <button @click="punch" v-show="!empty">Punch</button>
-                <button @click="restart">Restart</button>
-            </div>
-        </div>
+    <div id="vue-app-one">
+        <h3>{{title}}</h3>
+        <p>{{greetings}}</p>
+    </div>
+    <div id="vue-app-two">
+        <h3>{{title}}</h3>
+        <p>{{greetings}}</p>
+        <button @click="changeTitle">Change Title...</button>
     </div>
     <script src="app.js"></script>
 </body>

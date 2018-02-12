@@ -1,24 +1,34 @@
-new Vue({
-    el: '#vue-app',
+var one = new Vue({
+    el: "#vue-app-one",
     data: {
-        health: 100,
-        empty: false
+        title: "Vue - one",
+
     },
     methods: {
-        punch: function() {
 
-            this.health -= 20;
-            if (this.health <= 0) {
-                this.empty = true;
-            }
-            console.log(this.health);
-        },
-        restart: function() {
-            this.health = 100;
-            this.empty = false;
+    },
+    computed: {
+        greeting: function() {
+            return "Greetings from Instance One";
+        }
+    }
+});
+
+var two = new Vue({
+    el: "#vue-app-two",
+    data: {
+        title: "Vue - Two",
+    },
+    methods: {
+        changeTitle: function() {
+            one.title = "Title changed from 2 nd INstance..."
         }
     },
     computed: {
-
+        greeting: function() {
+            return "Greetings from Instance One";
+        }
     }
-})
+});
+
+two.title = "Title changed from outside of instance...";
