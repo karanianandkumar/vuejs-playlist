@@ -12,13 +12,12 @@
 </head>
 
 <body>
-    <div id="vue-app-one">
-        <h3>This is Vue One</h3>
-        <greeting></greeting>
-    </div>
-    <div id="vue-app-two">
-        <h3>This is Vue Two</h3>
-        <greeting></greeting>
+    <div id="vue-app">
+        <input type="text" value="" ref="input">
+        <button @click="checkRefValue">Submit</button>
+        <p>Your fav food is : {{favFood}}</p>
+        <div ref="divRef">Hello Div Ref...</div>
+
     </div>
     <script src="app.js"></script>
 </body>
