@@ -1,34 +1,21 @@
-var one = new Vue({
-    el: "#vue-app-one",
-    data: {
-        title: "Vue - one",
-
+Vue.component('greeting', {
+    template: '<p>My name is {{name}} . <button @click="changeName">Change Name</button></p>',
+    data: function() {
+        return {
+            name: 'Anand Kumar'
+        }
     },
     methods: {
-
-    },
-    computed: {
-        greeting: function() {
-            return "Greetings from Instance One";
+        changeName: function() {
+            this.name = "Anand Kumar Karani";
         }
     }
 });
 
-var two = new Vue({
-    el: "#vue-app-two",
-    data: {
-        title: "Vue - Two",
-    },
-    methods: {
-        changeTitle: function() {
-            one.title = "Title changed from 2 nd INstance..."
-        }
-    },
-    computed: {
-        greeting: function() {
-            return "Greetings from Instance One";
-        }
-    }
+new Vue({
+    el: '#vue-app-one'
 });
 
-two.title = "Title changed from outside of instance...";
+new Vue({
+    el: '#vue-app-two'
+})
